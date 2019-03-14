@@ -1,0 +1,29 @@
+﻿@page
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>goodbye</title>
+</head>
+<body>
+    <h1> Goodbye from the goodbye.cshml file</h1>
+    <p> Time is @DateTime.Now  in the year: @DateTime.Now.Year  </p>
+
+    @{
+        var greeting = "";
+        if (DateTime.Now.Hour > 12)
+        { greeting = "Good Evening"; }
+        else
+        { greeting = "Good Morning"; }
+    }
+
+    <p>@greeting</p>
+
+
+</body>
+</html>
