@@ -1,5 +1,7 @@
 ﻿@page
 @model EAP_WS1.Pages.ws1Model
+@addTagHelper *, Microsoft.AspNetCore.Mvc.TagHelpers
+
 @{
     Layout = null;
 }
@@ -32,27 +34,25 @@
 
     <br />
     <form method="post">
-        <label>What is your name: </label>
-        <input type="text" name="name" step="1" />
+        <label for="name">What is your name: </label>
+        <input type="text" id="name" name="name" step="1" value="@Model.name" />
         <br />
-        <label>What is your passwprd: </label>
-        <input type="hidden" name="password" step="2" />
+        <label for="password">What is your password: </label>
+        <input type="hidden" id="password" name="password" step="2" />
         <br />
-        <label>What is your age: </label>
-        <input type="number" name="age" min="18" max="70" step="3" />
+        <label for="age">What is your age: </label>
+        <input id="age" type="number" name="age" min="18" max="70" step="3" />
         <br />
-        <label>Select your favourite car</label>
-        <br />
-        <select name="cars" size="4">
+        <label for="car">Select your favourite car</label>
+        <select id="car" name="cars" size="4">
             <option value="Volvo">Volvo</option>
             <option value="Ford">Ford</option>
             <option value="Toyota">Toyota</option>
             <option value="Honda">Honda</option>
         </select>
         <br />
-        <input type="submit" />
+        <button type="submit">Press Me</button>
     </form>
-
-    <h1>Hello @Model.message</h1>
+    <h2>@Model.message</h2>
 </body>
 </html>
