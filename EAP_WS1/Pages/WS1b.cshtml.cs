@@ -17,8 +17,8 @@ namespace EAP_WS1.Pages
         [BindProperty]
         public int number2 { get; set; }
 
-
-        public string operation {get; set; }
+        [BindProperty]
+        public string operation { get; set; }
 
         public void OnGet()
         {
@@ -27,8 +27,30 @@ namespace EAP_WS1.Pages
 
         public void OnPost()
         {
-            int tot = number1 + number2;
-            message = $"Total of {number1} {operation} {number2} is: {tot}";
+            message = "Hello. ";
+            int tot=0;
+            switch (operation)
+            {
+                case "plus":
+                    tot = number1 + number2;
+                    message += $" {number1} {operation} {number2} is: {tot}";
+                    break;
+
+                case "minus":
+                    tot = number1 - number2;
+                    message += $" {number1} {operation} {number2} is: {tot}";
+                    break;
+                    
+                case "multiply":
+                    tot = number1 * number2;
+                    message += $" {number1} {operation} by {number2} is: {tot}";
+                    break;
+
+                case "divide":
+                    float total = number1 / number2;
+                    message += $" {number1} {operation} by {number2} is: {total}";
+                    break;
+            }          
         }
     }
 }
