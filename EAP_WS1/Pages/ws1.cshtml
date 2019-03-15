@@ -1,0 +1,58 @@
+﻿@page
+@model EAP_WS1.Pages.ws1Model
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>ws1</title>
+</head>
+<body>
+
+    <!-- Method one - with code block -->
+    @{
+
+        foreach (var country in @Model.MyTestArray)
+        {
+            <li>The home country: @country</li>
+        }
+
+    }
+    <br />
+    <!-- Method two - direct foreach execution -->
+
+    @foreach (var country in @Model.MyTestArray)
+    {
+        <li>The home country: @country</li>
+    }
+
+    <br />
+    <form method="post">
+        <label>What is your name: </label>
+        <input type="text" name="name" step="1" />
+        <br />
+        <label>What is your passwprd: </label>
+        <input type="hidden" name="password" step="2" />
+        <br />
+        <label>What is your age: </label>
+        <input type="number" name="age" min="18" max="70" step="3" />
+        <br />
+        <label>Select your favourite car</label>
+        <br />
+        <select name="cars" size="4">
+            <option value="Volvo">Volvo</option>
+            <option value="Ford">Ford</option>
+            <option value="Toyota">Toyota</option>
+            <option value="Honda">Honda</option>
+        </select>
+        <br />
+        <input type="submit" />
+    </form>
+
+    <h1>Hello @Model.message</h1>
+</body>
+</html>
