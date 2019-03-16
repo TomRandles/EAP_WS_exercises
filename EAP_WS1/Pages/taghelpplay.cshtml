@@ -1,0 +1,64 @@
+﻿@page
+@model EAP_WS1.Pages.taghelpplayModel
+@addTagHelper *, Microsoft.AspNetCore.Mvc.TagHelpers
+
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>taghelpplay</title>
+</head>
+<body>
+    <form method="post">
+        <label asp-for=Number1>Enter your first number</label>
+        <input asp-for=Number1 />
+        <br />
+        <br />
+
+        <label asp-for=age>Enter your age</label>
+        <input asp-for=age />
+        <br />
+        <br />
+        <label asp-for=savings>Enter your savings</label>
+        <input asp-for=savings />
+        <br />
+        <br />
+        <label asp-for=height>Enter your height</label>
+        <input asp-for=height />
+        <br />
+        <br />
+        <label asp-for=cholesterol>Enter your cholesterol</label>
+        <input asp-for=cholesterol />
+        <br />
+        <br />
+        <label asp-for=dateOfBirth>Is contact allowed?</label>
+        <input asp-for=dateOfBirth />
+        <br />
+        <br />
+        <label asp-for=isContactAllowed>Is contact allowed?</label>
+        <input asp-for=isContactAllowed />
+        <br />
+        <br />
+        <label>
+            Favourite season
+            <label for="Winter">Winter</label>
+            <input value="Winter" id="Winter" type="radio" asp-for=Season />
+            <label for="Spring">Spring</label>
+            <input value="Spring" id="Spring" type="radio" asp-for=Season />
+            <label for="Summer">Summer</label>
+            <input value="Summer" id="Summer" type="radio" asp-for=Season />
+            <label for="Autumn">Autumn</label>
+            <input value="Autumn" id="Autumn" type="radio" asp-for=Season />
+        </label>
+        <br />
+        <br />
+        <button type="submit">Enter</button>
+    </form>
+    <h2>@Model.message</h2>
+</body>
+</html>

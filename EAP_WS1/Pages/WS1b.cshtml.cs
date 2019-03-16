@@ -9,7 +9,7 @@ namespace EAP_WS1.Pages
 {
     public class WS1bModel : PageModel
     {
-        public string message { get; set; }
+        public string message { get; set; } = "";
 
         [BindProperty]
         public int number1 { get; set; }
