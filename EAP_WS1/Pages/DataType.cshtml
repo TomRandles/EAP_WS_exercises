@@ -1,0 +1,35 @@
+﻿@page
+@model EAP_WS1.Pages.DataTypeModel
+@addTagHelper *, Microsoft.AspNetCore.Mvc.TagHelpers
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>DataType</title>
+</head>
+<body>
+    <form method="post">
+        <label asp-for=myDate>Enter your date of birth</label>
+        <input asp-for=myDate />
+        <br />
+        <br />
+
+        <label asp-for=phoneNumber>Enter your phone number</label>
+        <input asp-for=phoneNumber />
+        <br />
+        <br />
+        <label asp-for=currency>Enter your savings</label>
+        <input asp-for=currency />
+        <br />
+        <br />
+        <button type="submit">Enter</button>
+    </form>
+    <h3>@Model.message</h3>
+</body>
+
+</html>
